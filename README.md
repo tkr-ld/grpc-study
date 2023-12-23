@@ -1,1 +1,1 @@
-# grpc-study
+# grpc-weather
