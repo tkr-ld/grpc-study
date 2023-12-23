@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package weather;
+
+service WeatherService {
+    rpc GetWeather(GetRequest) returns (WeatherResponse):
+}
+
+message GetRequest {
+    int32 number = 1;
+}
+
+message WeatherResponse {
+    weather WeatherType = 1;
+}
+
+enum WetherType {
+    UNKNOWN = 0;
+    SUNNY = 1;
+    CLOUDY = 2;
+    RAIN = 3;
+}
