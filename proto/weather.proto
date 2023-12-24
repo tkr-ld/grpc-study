@@ -1,9 +1,11 @@
 syntax = "proto3";
 
+option go_package = "github.com/tkr-ld/grpc-weather";
+
 package weather;
 
 service WeatherService {
-    rpc GetWeather(GetRequest) returns (WeatherResponse):
+    rpc GetWeather(GetRequest) returns (WeatherResponse);
 }
 
 message GetRequest {
@@ -11,10 +13,10 @@ message GetRequest {
 }
 
 message WeatherResponse {
-    weather WeatherType = 1;
+    WeatherType weather = 1;
 }
 
-enum WetherType {
+enum WeatherType {
     UNKNOWN = 0;
     SUNNY = 1;
     CLOUDY = 2;
