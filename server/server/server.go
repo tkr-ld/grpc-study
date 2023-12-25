@@ -14,8 +14,5 @@ func main() {
 		log.Fatalf("failed to listten")
 	}
 
-	server := grpc.NewServer()
-
-
-	reflection.Register(server)
+	server := grpc
 }
