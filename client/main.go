@@ -21,8 +21,14 @@ func main() {
 
 	client := grpc_weather.NewWeatherServiceClient(conn)
 
+	var number int32
+	_, err = fmt.Scan(&number)
+	if err != nil {
+		panic(err)
+	}
+
 	req := &grpc_weather.GetRequest{
-		Number: 1,
+		Number: number,
 	}
 
 	res, err := client.GetWeather(context.Background(), req)
